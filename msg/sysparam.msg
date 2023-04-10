@@ -1,0 +1,10 @@
+string serialPortName
+int32 serialBaudrate
+int32 Encoder_Threads
+int32 Reduction_Ratio
+float64 Wheel_Distance
+float64 Wheel_Diameter
+int32 DriverID_FR
+int32 DriverID_FL
+int32 DriverID_BR
+int32 DriverID_BL

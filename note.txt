@@ -1,0 +1,14 @@
+1.功能包: vehicle,依赖: std_msgs, nav_msgs, geometry_msgs, serial, tf;
+2.节点: base_controller, 可以通过base.launch文件启动;
+3.参数服务器参数(可以在base.launch文件中配置)
+   Wheel_Distance: double 左右两侧轮子间距,默认值0.48m
+   Wheel_Diameter: double 驱动轮直径,默认值0.29m
+   Encoder_Threads: int 编码器线数,默认值10000
+   Reduction_Ratio: int 电机减速比,默认值30
+   sample_interval: int 电机编码器采样时间间隔,默认值20ms
+   useOdom: bool 是否发布里程计(编码器)信息以及里程计坐标系到机器人本体坐标系坐标变换,默认值true
+   DriverID_FR:右前轮驱动器地址,默认值0
+   DriverID_FL:左前轮驱动器地址,默认值1
+   DriverID_BR:右后轮驱动器地址,默认值2
+   DriverID_BL:左后轮驱动器地址,默认值3
+

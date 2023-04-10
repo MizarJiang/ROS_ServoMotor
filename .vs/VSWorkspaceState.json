@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\include",
+    "\\include\\vehicle",
+    "\\launch",
+    "\\msg",
+    "\\src"
+  ],
+  "SelectedNode": "\\src\\motor.cpp",
+  "PreviewInSolutionExplorer": false
+}

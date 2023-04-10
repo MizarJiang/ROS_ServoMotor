@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+
+<arg name="use_two_motor_encoder_only" default="false" /><!---->
+
+		<arg name="Wheel_Distance" default="0.85" />
+		<arg name="Wheel_Diameter" default="0.295"  />
+		<arg name="serialPortName"  default="/dev/ttyS0" />
+		<arg name="serialBaudrate" default="115200"  />
+		<arg name="Reduction_Ratio"  default="30" />
+		<arg name="Encoder_Threads" default="10000"  />
+		<arg name="sample_interval" default="15"  />
+		<arg name="useOdom" default="false"  />
+		
+		<arg name="DriverID_FR" default="0" />
+		<arg name="DriverID_FL" default="1" />
+		<arg name="DriverID_BR" default="2" />
+		<arg name="DriverID_BL" default="3" />
+
+		<node pkg="vehicle" type="base_controller" name="base_controller" output="screen">
+	
+	<param name="serialPortName" type="string" value="$(arg serialPortName)" /><!--与驱动器通信串口号,默认值ttyS1-->
+	<param name="serialBaudrate" type="int" value="$(arg serialBaudrate)" /><!--串口通信波特率,默认值115200-->
+	<param name="Wheel_Distance" type="double" value="$(arg Wheel_Distance)" /><!--底盘左右两侧轮间距,单位m,默认值0.48-->
+	<param name="Wheel_Diameter" type="double" value="$(arg Wheel_Diameter)" /><!--驱动轮直径,单位m,默认值0.29-->
+	<param name="Reduction_Ratio" type="int" value="$(arg Reduction_Ratio)" /><!--电机减速比,默认值30-->
+	<param name="Encoder_Threads" type="int" value="$(arg Encoder_Threads)" /><!--编码器线数:电机每转一圈编码器输出的脉冲数,默认值10000-->
+	<param name="sample_interval" type="int" value="$(arg sample_interval)" /><!--电机位置数据采样间隔,单位ms;决定里程计数据发布频率,默认值20-->
+	<param name="useOdom" type="bool" value="$(arg useOdom)" /><!--是否发布里程计数据,默认值true-->
+	<param name="DriverID_FR" type="int" value="$(arg DriverID_FR)"/>
+	<param name="DriverID_FL" type="int" value="$(arg DriverID_FL)"/>
+	<param name="DriverID_BR" type="int" value="$(arg DriverID_BR)"/>
+	<param name="DriverID_BL" type="int" value="$(arg DriverID_BL)"/>
+	<param name="use_two_motor_encoder_only" type="bool" value="$(arg use_two_motor_encoder_only)"/>	
+   </node>
+</launch>
